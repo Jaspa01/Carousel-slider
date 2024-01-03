@@ -10,7 +10,22 @@ function App() {
   return (
 
     <div className="App">
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        swipeable={true}
+        draggable={false}
+        showDots={true}
+        ssr={true}
+        infinite={true}
+        autoPlaySpeed={1000}
+        keyBoardControl={true}
+        customTransition="all .5"
+        transitionDuration={500}
+        containerClass="carousel-container"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
+      >
         {ITEMS.map((item) => {
           return <Products data={item} />
         })}
@@ -20,3 +35,4 @@ function App() {
 }
 
 export default App;
+
